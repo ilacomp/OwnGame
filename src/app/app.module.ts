@@ -8,6 +8,7 @@ import {AppRoutingModule} from './app-routing.module';
 import { OwnStartComponent } from './own-start/own-start.component';
 import { OwnPlayerComponent } from './own-player/own-player.component';
 import { OwnPlayersComponent } from './own-players/own-players.component';
+import {OwnPlayersService} from './own-players.service';
 
 
 @NgModule({
@@ -22,7 +23,7 @@ import { OwnPlayersComponent } from './own-players/own-players.component';
         BrowserModule,
         BrowserAnimationsModule
     ],
-    providers: [],
+    providers: [OwnPlayersService],
     bootstrap: [AppComponent]
 })
 export class AppModule {

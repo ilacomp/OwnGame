@@ -6,7 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./own-players.component.scss']
 })
 export class OwnPlayersComponent implements OnInit {
-  amount: number = 100;
   constructor() { }
 
   ngOnInit() {

@@ -1,32 +1,26 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {OwnPlayersService} from '../own-players.service';
 
 @Component({
     selector: 'own-own-player',
     templateUrl: './own-player.component.html',
     styleUrls: ['./own-player.component.scss']
 })
-export class OwnPlayerComponent implements OnInit, OnDestroy {
+export class OwnPlayerComponent {
     @Input('color') color: string;
-    @Input('amount') amount: number;
-    score: number = 0;
 
-
-    constructor() {
+    constructor(private service: OwnPlayersService) {
     }
 
-    ngOnInit() {
-        this.score = +localStorage.getItem('score' + this.color) || 0;
-    }
-
-    ngOnDestroy() {
-        localStorage.setItem('score' + this.color, this.score.toString());
+    get score(): number {
+        return this.service.players[this.color];
     }
 
     incrementScore() {
-        this.score += this.amount;
+        this.service.incrementScore(this.color);
     }
 
     decrementScore() {
-        this.score -= this.amount;
+        this.service.decrementScore(this.color);
     }
 }
