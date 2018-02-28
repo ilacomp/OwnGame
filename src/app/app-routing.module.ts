@@ -1,10 +1,27 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {OwnStartComponent} from './own-start/own-start.component';
+import {OwnCategoriesComponent} from './own-categories/own-categories.component';
+import {OwnQuestionComponent} from './own-question/own-question.component';
 
 const appRoutes: Routes = [
-    {path: 'start', component: OwnStartComponent},
-    {path: '**', redirectTo: '/start', pathMatch: 'full'},
+    {
+        path: '',
+        component: OwnStartComponent
+    },
+    {
+        path: 'categories',
+        component: OwnCategoriesComponent,
+    },
+    {
+        path: 'categories/:categoryId/:questionId',
+        component: OwnQuestionComponent
+    },
+    {
+        path: '**',
+        redirectTo: '/',
+        pathMatch: 'full'
+    }
 ];
 
 @NgModule({

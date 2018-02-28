@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {OwnPlayersService} from '../own-players.service';
+import {OwnPlayersService} from '../core/own-players.service';
 
 @Component({
     selector: 'own-own-player',

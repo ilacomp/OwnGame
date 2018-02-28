@@ -1,0 +1,15 @@
+<div class="field" [class.hide-unselected]="!!selectedQuestion">
+  <div *ngFor="let cat of categories" class="row">
+    <div class="category"
+         [class.selected]="selectedCategory === cat">
+      {{cat.category}}
+    </div>
+    <div *ngFor="let question of cat.questions"
+         class="question"
+         (click)="select(cat, question)"
+         [class.selected]="selectedQuestion === question">
+      {{question.price}}
+    </div>
+  </div>
+</div>
+<own-own-players></own-own-players>

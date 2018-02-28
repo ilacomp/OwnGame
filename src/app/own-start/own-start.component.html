@@ -1,6 +1,6 @@
 <div class="logo">
     <div class="row">
-        <div class="first">С</div>
+        <div class="first" [@charState]="charState" (@charState.done)="animationDone($event)">С</div>
         <div>В</div>
         <div>О</div>
         <div>Я</div>
