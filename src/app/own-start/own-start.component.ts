@@ -10,6 +10,9 @@ export class OwnStartComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    let audio = new Audio('assets/zastavka.mp3');
+    audio.load();
+    audio.play();
   }
 
 }
