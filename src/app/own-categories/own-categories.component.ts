@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {OwnQuestionsService} from '../core/own-questions.service';
 import {Category, Question} from '../models/questions.model';
 import {ActivatedRoute, Router} from '@angular/router';
@@ -8,14 +8,22 @@ import {ActivatedRoute, Router} from '@angular/router';
     templateUrl: './own-categories.component.html',
     styleUrls: ['./own-categories.component.scss']
 })
-export class OwnCategoriesComponent implements OnInit {
+export class OwnCategoriesComponent implements OnInit, OnDestroy {
     selectedCategory: Category;
     selectedQuestion: Question;
+    audio: HTMLAudioElement;
 
     constructor(private questionsService: OwnQuestionsService, private router: Router, private route: ActivatedRoute) {
     }
 
     ngOnInit() {
+        this.audio = new Audio('assets/categories.mp3');
+        this.audio.loop = true;
+        this.audio.play();
+    }
+
+    ngOnDestroy() {
+        this.audio.pause();
     }
 
     get categories(): Category[] {
