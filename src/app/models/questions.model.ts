@@ -1,7 +1,8 @@
 export class Question {
     price: number;
     answer: string;
-    disabled: boolean;
+    cat?: boolean;
+    disabled?: boolean;
     text?: string;
     video?: string;
     audio?: string;

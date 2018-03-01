@@ -1,7 +1,9 @@
-<a type="button" [routerLink]="['/categories']" class="back">Назад</a>
 <div class="question-container">
   <p *ngIf="question?.text">{{ question.text }}</p>
   <audio *ngIf="question?.audio" src="{{question.audio}}" controls autoplay></audio>
   <video *ngIf="question?.video" src="{{question.video}}" controls autoplay></video>
 </div>
+<div *ngIf="showCat" class="cat"><img src="/assets/cat.jpg"></div>
+<div *ngIf="showTimer" class="timer">{{expired}} сек</div>
+<div *ngIf="showAnswer" class="answer">{{question.answer}}</div>
 <own-own-players></own-own-players>
