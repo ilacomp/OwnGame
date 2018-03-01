@@ -13,7 +13,11 @@ export class OwnPlayerComponent {
     }
 
     get score(): number {
-        return this.service.players[this.color];
+        return this.service.players[this.color].score;
+    }
+
+    get name(): string {
+        return this.service.players[this.color].name;
     }
 
     incrementScore() {

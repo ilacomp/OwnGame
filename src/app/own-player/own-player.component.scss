@@ -1,5 +1,12 @@
-div {
+.name {
   width: 14vw;
+  font-size: 2vw;
+  color: white;
+  line-height: 3vw;
+  text-align: center;
+  text-shadow: 1px 1px 2px black;
+}
+.score {
   display: flex;
 }
 span {

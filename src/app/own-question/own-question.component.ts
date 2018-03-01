@@ -101,4 +101,8 @@ export class OwnQuestionComponent implements OnInit {
     get showAnswer() {
         return this.state === FormState.Answer;
     }
+
+    get showQuestion() {
+        return [FormState.See, FormState.WaitAnswer, FormState.Think].includes(this.state);
+    }
 }

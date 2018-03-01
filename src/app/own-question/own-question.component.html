@@ -1,9 +1,21 @@
-<div class="question-container" *ngIf="!showAnswer">
+<div class="question-container" *ngIf="showQuestion">
   <p *ngIf="question?.text">{{ question.text }}</p>
   <audio *ngIf="question?.audio" src="{{question.audio}}" controls autoplay></audio>
   <video *ngIf="question?.video" src="{{question.video}}" controls autoplay></video>
 </div>
-<div *ngIf="showCat" class="cat"><img src="/assets/cat.jpg"></div>
+<div *ngIf="showCat" class="cat">
+  <div class="catlogo">
+    <div class="row first">
+      <div>К</div>
+      <div>О</div>
+      <div>Д</div>
+    </div>
+    <div class="row last">
+      <div>В</div>
+      <div>МЕШКЕ</div>
+    </div>
+  </div>
+</div>
 <div *ngIf="showTimer" class="timer">{{expired}} сек</div>
 <div *ngIf="showAnswer" class="answer">{{question.answer}}</div>
 <own-own-players></own-own-players>

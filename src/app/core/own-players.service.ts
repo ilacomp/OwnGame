@@ -3,9 +3,18 @@ import {Injectable} from '@angular/core';
 @Injectable()
 export class OwnPlayersService {
     players = {
-        red: 0,
-        yellow: 0,
-        green: 0
+        red: {
+            name: 'Борщевики',
+            score: 0
+        },
+        yellow: {
+            name: 'Ким Чен Сыр',
+            score: 0
+        },
+        brown: {
+            name: 'Мама-Обама',
+            score: 0
+        }
     };
 
     currentAmount: number = 0;
@@ -14,10 +23,10 @@ export class OwnPlayersService {
     }
 
     incrementScore(player: string) {
-        this.players[player] += this.currentAmount;
+        this.players[player].score += this.currentAmount;
     }
 
     decrementScore(player: string) {
-        this.players[player] -= this.currentAmount;
+        this.players[player].score -= this.currentAmount;
     }
 }

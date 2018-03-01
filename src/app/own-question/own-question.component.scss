@@ -12,7 +12,7 @@
   p {
     color: white;
     text-align: center;
-    font-size: 50px;
+    font-size: 4vw;
     margin: 70px;
   }
 }
@@ -25,7 +25,6 @@
   left: 0;
   width: 100%;
   height: 100%;
-  color: white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,6 +33,49 @@
   font-size: 4vw;
 }
 
-.cat img {
-  height: 50%;
+.timer {
+  padding-top: 10%;
+}
+
+.catlogo {
+  display: flex;
+  flex-direction: column;
+  .row {
+    display: flex;
+    div {
+      font-weight: bold;
+      color: black;
+      margin: 2px;
+      text-align: center;
+    }
+    &.first div{
+      font-size: 12vw;
+      width: 12vw;
+      height: 12vw;
+      line-height: 12vw;
+      background: linear-gradient(to bottom, #181718, #313031);
+      color: #d2d1d3;
+      animation: scaleChar 0.5s;
+    }
+    &.last div {
+      font-size: 7vw;
+      line-height: 7vw;
+      background: linear-gradient(to bottom, #efdd00, #ecda07);
+      animation: scaleChar 1s;
+
+      &:first-child {
+        width: 7vw;
+        height: 7vw;
+      }
+      &:last-child {
+        flex: 1;
+      }
+    }
+  }
+}
+
+
+@keyframes scaleChar {
+  from   {transform: scaleY(0)}
+  to  {transform: scaleY(1)}
 }

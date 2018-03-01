@@ -1,5 +1,8 @@
 <div [style.backgroundColor]="color">
-  <button (click)="decrementScore()">-</button>
-  <span>{{score}}</span>
-  <button (click)="incrementScore()">+</button>
+  <div class="name">{{name}}</div>
+  <div class="score">
+    <button (click)="decrementScore()">-</button>
+    <span>{{score}}</span>
+    <button (click)="incrementScore()">+</button>
+  </div>
 </div>
