@@ -1,0 +1,31 @@
+:host {
+  display: flex;
+  height: 100%;
+  background: radial-gradient(#a68dc2, #3f3c34);
+  flex-direction: column;
+  justify-content: center;
+}
+
+.question-container {
+  margin: 0 auto 70px;
+
+  p {
+    color: white;
+    text-align: center;
+    font-size: 50px;
+    margin: 70px;
+  }
+}
+
+.back {
+  position: fixed;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  text-decoration: none;
+  color: white;
+  &:hover {
+    opacity: 0.9;
+    background-color: rgba(255,255,255,0.2);
+  }
+}

@@ -1,4 +1,7 @@
-<p>
-  own-question works!
-</p>
+<a type="button" [routerLink]="['/categories']" class="back">Назад</a>
+<div class="question-container">
+  <p *ngIf="question?.text">{{ question.text }}</p>
+  <audio *ngIf="question?.audio" src="{{question.audio}}" controls autoplay></audio>
+  <video *ngIf="question?.video" src="{{question.video}}" controls autoplay></video>
+</div>
 <own-own-players></own-own-players>

@@ -1,7 +1,8 @@
 export class Question {
     price: number;
-    text?: string;
     answer: string;
+    disabled: boolean;
+    text?: string;
     video?: string;
     audio?: string;
 }
@@ -9,4 +10,8 @@ export class Question {
 export class Category {
     category: string;
     questions: Question[];
+
+    get disabled () {
+      return this.questions.every(q => q.disabled);
+    }
 }

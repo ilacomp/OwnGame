@@ -44,5 +44,5 @@ export class AppModule {
 }
 
 export function startupServiceFactory(questionService: OwnQuestionsService): Function {
-    return () => questionService.loadCategories();
+    return () => questionService.loadCategories().subscribe();
 }
