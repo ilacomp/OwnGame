@@ -9,6 +9,7 @@
 .logo {
   display: flex;
   flex-direction: column;
+  transform: translateX(5vw);
   .row {
     display: flex;
     div {

@@ -38,7 +38,7 @@ export class OwnStartComponent implements OnInit, OnDestroy, AfterViewInit {
     ngAfterViewInit() {
         setTimeout(() => {
             this.start = true;
-            setTimeout(this.startCharAnimation.bind(this), 2000);
+            setTimeout(() =>  this.charState = 'inactive', 2000);
         }, 10000);
     }
 
@@ -58,7 +58,7 @@ export class OwnStartComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     animationDone(event) {
-        if (event.fromState === 'void') return;
+        if (!event.toState) return;
         if (event.toState === 'active') {
             this.charState = 'inactive';
         } else {
