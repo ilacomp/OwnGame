@@ -12,9 +12,13 @@ export class OwnQuestionsService {
 
     constructor(private http: HttpClient) { }
 
-    loadCategories() {
+    loadCategories(): Observable<Category[]> {
         if (this.categories) return Observable.of(this.categories);
         return this.http.get<Category[]>('assets/questions.json')
             .do((categories: Category[]) => this.categories = categories.map(data => Object.assign(new Category(), data)));
+    }
+
+    get hasQuestions(): boolean {
+        return this.categories.some(cat => cat.questions.some(question => !question.disabled));
     }
 }

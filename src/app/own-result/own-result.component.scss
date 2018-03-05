@@ -1,0 +1,30 @@
+:host {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  background: #747987;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  .row {
+    display: flex;
+    div {
+      //font-size: 50pt;
+      font-size: 10vw;
+      font-weight: bold;
+      color: black;
+      background: linear-gradient(to bottom, #a0a2a4, #ababaf);
+      margin: 2px;
+      width: 10vw;
+      height: 10vw;
+      line-height: 10vw;
+      text-align: center;
+      &.first {
+        background: linear-gradient(to bottom, #efdd00, #ecda07);
+      }
+    }
+  }
+}

@@ -12,7 +12,7 @@
   .row {
     display: flex;
     div {
-      //font-size: 50pt;
+      z-index: 2;
       font-size: 10vw;
       font-weight: bold;
       color: black;
@@ -22,8 +22,47 @@
       height: 10vw;
       line-height: 10vw;
       text-align: center;
-      &.first {
+      &.c {
         background: linear-gradient(to bottom, #efdd00, #ecda07);
+        transform: translateX(28vw);
+        z-index: 3;
+      }
+      &.b {
+        transform: translateX(-6vw);
+      }
+      &.s {
+        transform: translateX(-25vw);
+        z-index: 1;
+      }
+      &.o {
+        transform: translateX(-5vw);
+        z-index: 1;
+        opacity: 0;
+      }
+      &.r {
+          transform: translateX(-10vw);
+        opacity: 0;
+      }
+    }
+    &.start div {
+      transition: all 2000ms ease-in-out;
+      &.c {
+        transform: translateX(0);
+      }
+      &.b {
+        transform: translateX(0);
+      }
+      &.s {
+        transform: translateX(-31vw);
+        opacity: 0;
+      }
+      &.o {
+        transform: translateX(0);
+        opacity: 1;
+      }
+      &.r {
+        transform: translateX(0);
+        opacity: 1;
       }
     }
   }

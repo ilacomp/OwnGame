@@ -1,4 +1,4 @@
-import {Component, HostListener, OnDestroy, OnInit} from '@angular/core';
+import {AfterViewInit, Component, HostListener, OnDestroy, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Router} from '@angular/router';
 
@@ -14,43 +14,55 @@ import {Router} from '@angular/router';
             state('active', style({
                 transform: 'scaleX(-1)'
             })),
-            transition('inactive => active', animate('1s ease-in')),
-            transition('active => inactive', animate('1s ease-out'))
+            transition('inactive => active', animate('1s ease-in-out')),
+            transition('active => inactive', animate('1s ease-in-out'))
         ])
     ]
 })
-export class OwnStartComponent implements OnInit, OnDestroy {
-    charState = 'inactive';
+export class OwnStartComponent implements OnInit, OnDestroy, AfterViewInit {
+    charState: string;
     audio: HTMLAudioElement;
+    start: boolean;
 
     constructor(private router: Router) {
     }
 
     ngOnInit() {
         this.playIntro();
-        this.startAnimation();
     }
 
     ngOnDestroy() {
         this.audio.pause();
     }
 
-    playIntro() {
-        this.audio = new Audio('assets/zastavka.mp3');
-        this.audio.load();
-        this.audio.play();
+    ngAfterViewInit() {
+        setTimeout(() => {
+            this.start = true;
+            setTimeout(this.startCharAnimation.bind(this), 2000);
+        }, 10000);
     }
 
-    startAnimation() {
+    playIntro() {
+        this.audio = new Audio('assets/zastavka.mp3');
+        this.audio.play();
+        this.audio.addEventListener('ended', () => {
+            this.audio = new Audio('assets/closing.mp3');
+            this.audio.loop = true;
+            this.audio.play();
+        });
+    }
+
+    startCharAnimation() {
         const delay = 3 + Math.random() * 10;
         setTimeout(() => this.charState = 'active', delay * 1000);
     }
 
     animationDone(event) {
+        if (event.fromState === 'void') return;
         if (event.toState === 'active') {
             this.charState = 'inactive';
         } else {
-            this.startAnimation();
+            this.startCharAnimation();
         }
     }
 

@@ -12,6 +12,7 @@ import {CoreModule} from './core/core.module';
 import {OwnQuestionsService} from './core/own-questions.service';
 import { OwnCategoriesComponent } from './own-categories/own-categories.component';
 import { OwnQuestionComponent } from './own-question/own-question.component';
+import { OwnResultComponent } from './own-result/own-result.component';
 
 
 @NgModule({
@@ -21,7 +22,8 @@ import { OwnQuestionComponent } from './own-question/own-question.component';
         OwnPlayerComponent,
         OwnPlayersComponent,
         OwnCategoriesComponent,
-        OwnQuestionComponent
+        OwnQuestionComponent,
+        OwnResultComponent
     ],
     imports: [
         AppRoutingModule,

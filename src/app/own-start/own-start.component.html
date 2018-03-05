@@ -1,9 +1,11 @@
 <div class="logo">
-    <div class="row">
-        <div class="first" [@charState]="charState" (@charState.done)="animationDone($event)">С</div>
-        <div>В</div>
-        <div>О</div>
-        <div>Я</div>
+    <div class="row" [class.start]="start">
+        <!--<div class="first" [@charState]="charState" (@charState.done)="animationDone($event)">С</div>-->
+        <div class="c" [@charState]="charState" (@charState.done)="animationDone($event)">С</div>
+        <div class="b">В</div>
+        <div class="o">О</div>
+        <div class="r">Я</div>
+        <div class="s">S</div>
     </div>
     <div class="row">
         <div>И</div>

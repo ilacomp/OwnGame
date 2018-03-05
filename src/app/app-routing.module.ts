@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {OwnStartComponent} from './own-start/own-start.component';
 import {OwnCategoriesComponent} from './own-categories/own-categories.component';
 import {OwnQuestionComponent} from './own-question/own-question.component';
+import {OwnResultComponent} from './own-result/own-result.component';
 
 const appRoutes: Routes = [
     {
@@ -16,6 +17,10 @@ const appRoutes: Routes = [
     {
         path: 'categories/:categoryId/:questionId',
         component: OwnQuestionComponent
+    },
+    {
+        path: 'result',
+        component: OwnResultComponent
     },
     {
         path: '**',

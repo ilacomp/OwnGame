@@ -66,7 +66,11 @@ export class OwnQuestionComponent implements OnInit {
             case FormState.WaitAnswer:
                 return this.state = FormState.Answer;
             default:
-                return this.router.navigate(['/categories']);
+                if (this.ownQuestionsService.hasQuestions) {
+                    return this.router.navigate(['/categories']);
+                } else {
+                    return this.router.navigate(['/result']);
+                }
         }
     }
 
