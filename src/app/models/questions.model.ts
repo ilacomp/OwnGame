@@ -1,9 +1,11 @@
 export class Question {
     price: number;
-    answer: string;
+    answer?: string;
+    videoanswer?: string;
     cat?: boolean;
     disabled?: boolean;
     text?: string;
+    image?: string;
     video?: string;
     audio?: string;
 }
