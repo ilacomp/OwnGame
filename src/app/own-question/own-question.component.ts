@@ -74,6 +74,13 @@ export class OwnQuestionComponent implements OnInit {
         }
     }
 
+    @HostListener('document:keypress', ['$event'])
+    onPress(event) {
+        if (event.keyCode === 32) {
+            this.state = FormState.See;
+        }
+    }
+
     startTimer() {
         this.timerAudio = new Audio('assets/30sec.mp3');
         this.timerAudio.play();

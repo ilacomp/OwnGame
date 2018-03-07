@@ -2,7 +2,7 @@
   <p *ngIf="question?.text">{{ question.text }}</p>
   <img *ngIf="question.image" src="assets/{{question.image}}" width="100%">
   <audio *ngIf="question?.audio" src="assets/{{question.audio}}" controls autoplay></audio>
-  <video width="1024" *ngIf="question?.video" src="assets/{{question.video}}" controls autoplay></video>
+  <video width="1024" *ngIf="question?.video" src="assets/{{question.video}}" controls></video>
 </div>
 <div *ngIf="showCat" class="cat">
   <div class="catlogo">
@@ -20,6 +20,6 @@
 <div *ngIf="showTimer" class="timer">{{expired}} сек</div>
 <div *ngIf="showAnswer" class="answer">
   <p *ngIf="question?.answer">{{ question.answer }}</p>
-  <video width="1024" *ngIf="question?.videoanswer" src="assets/{{question.videoanswer}}" controls autoplay></video>
+  <video width="1024" *ngIf="question?.videoanswer" src="assets/{{question.videoanswer}}" controls></video>
 </div>
 <own-own-players></own-own-players>
