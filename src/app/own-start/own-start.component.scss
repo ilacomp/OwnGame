@@ -25,24 +25,24 @@
       text-align: center;
       &.c {
         background: linear-gradient(to bottom, #efdd00, #ecda07);
-        transform: translateX(28vw);
-        z-index: 3;
+        //transform: translateX(28vw);
+        //z-index: 3;
       }
       &.b {
-        transform: translateX(-6vw);
+        //transform: translateX(-6vw);
       }
-      &.s {
-        transform: translateX(-25vw);
-        z-index: 1;
-      }
+      //&.s {
+      //  transform: translateX(-25vw);
+      //  z-index: 1;
+      //}
       &.o {
-        transform: translateX(-5vw);
-        z-index: 1;
-        opacity: 0;
+        //transform: translateX(-5vw);
+        //z-index: 1;
+        //opacity: 0;
       }
       &.r {
-          transform: translateX(-10vw);
-        opacity: 0;
+        //transform: translateX(-10vw);
+        //opacity: 0;
       }
     }
     &.start div {
@@ -53,10 +53,10 @@
       &.b {
         transform: translateX(0);
       }
-      &.s {
-        transform: translateX(-31vw);
-        opacity: 0;
-      }
+      //&.s {
+      //  transform: translateX(-31vw);
+      //  opacity: 0;
+      //}
       &.o {
         transform: translateX(0);
         opacity: 1;
